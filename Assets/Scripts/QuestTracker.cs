@@ -5,7 +5,7 @@ public class QuestTracker : MonoBehaviour
 {
     public GameObject reward;
     private int _lastCount = -1;
-    private float _checkTimer = 0;
+    private float _checkTimer;
 
     // Tjekka hversu margir róbotar eru ólagaðir
     // Þegar þessi tala fer niður í 0 er 'reward' GameObjectið activeitað

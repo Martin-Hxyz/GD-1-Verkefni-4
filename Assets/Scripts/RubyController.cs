@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
 public class RubyController : MonoBehaviour
@@ -113,6 +114,13 @@ public class RubyController : MonoBehaviour
 
         // clamp segir talan ´health + change´ verður að vera innan 0 til maxHealth
         health = Math.Clamp(health + change, 0, maxHealth);
+
+        // ef health er minna en 0
+        if (health <= 0)
+        {
+            // loada game over scene
+            SceneManager.LoadScene(2);
+        }
         
         // resize-a healthbar maskið
         HealthBar.Instance.SetValue(health / (float)maxHealth);
