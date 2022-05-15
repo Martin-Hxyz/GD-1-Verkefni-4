@@ -51,7 +51,8 @@ public class PlatformerPlayerController : MonoBehaviour
 
         UpdateAnimation();
 
-        if (m_Transform.position.y < -15)
+        // tapar ef tu dettur af mappinu
+        if (m_Transform.position.y < -25)
         {
             Die();
         }

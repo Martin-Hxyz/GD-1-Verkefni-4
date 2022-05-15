@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver_LoadScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(5);
     }
 
     public void GameOverWin()
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOverWin_LoadScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     private void FadeTick()
@@ -52,5 +52,15 @@ public class GameManager : MonoBehaviour
         var color = fadeOut.color;
         color.a += (100f * 0.05f);
         fadeOut.color = color;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void LoadMain()
+    {
+        SceneManager.LoadScene(3);
     }
 }

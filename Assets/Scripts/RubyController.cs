@@ -44,7 +44,7 @@ public class RubyController : MonoBehaviour
             Launch();
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             var hit = Physics2D.Raycast(_rigidbody.position + Vector2.up * 0.2f, _lookDirection, 1.5f,
                 LayerMask.GetMask("NPC"));

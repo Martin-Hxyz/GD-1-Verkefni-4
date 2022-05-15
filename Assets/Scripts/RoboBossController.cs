@@ -97,7 +97,7 @@ public class RoboBossController : MonoBehaviour
 
     public void Fix()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     private Vector2 RadianToVector2(float radian)
