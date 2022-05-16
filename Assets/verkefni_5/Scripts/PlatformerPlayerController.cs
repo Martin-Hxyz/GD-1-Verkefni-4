@@ -8,6 +8,7 @@ public class PlatformerPlayerController : MonoBehaviour
     public float maxHealth = 10.0f;
     public bool hasKey;
     public LayerMask groundMask;
+    public GameObject bulletPrefab;
 
     private Transform m_Transform;
     private Rigidbody2D m_Rigibody;
@@ -49,6 +50,11 @@ public class PlatformerPlayerController : MonoBehaviour
             HandleInteract();
         }
 
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Shoot();
+        }
+
         UpdateAnimation();
 
         // tapar ef tu dettur af mappinu
@@ -62,6 +68,14 @@ public class PlatformerPlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         m_Rigibody.velocity = new Vector2(m_MoveHorizontal, m_Rigibody.velocity.y);
+    }
+
+    private void Shoot()
+    {
+        Vector3 origin = m_Rigibody.worldCenterOfMass + m_Forward * 0.5f;
+        var bullet = Instantiate(bulletPrefab, origin, Quaternion.identity);
+        var rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(m_Forward * 1400f);
     }
 
     private void Jump()
